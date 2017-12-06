@@ -1,0 +1,8 @@
+<div class="container-fluid">
+  <app-launch-info-box 
+    *ngFor="let launch of latestLaunches"
+    [imageURL] = "launch.rocket.imageURL"
+    [name] = "launch.name"
+    [net] = "launch.net"
+  ></app-launch-info-box>
+</div>
