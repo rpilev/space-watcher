@@ -1,0 +1,45 @@
+<div class="search-box">
+  <form class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               name="dp" [(ngModel)]="dateStart" ngbDatepicker #start="ngbDatepicker">
+        <button class="input-group-addon" (click)="start.toggle()" type="button">
+          <img src="../assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+        </button>
+      </div>
+    </div>
+  </form>
+  <form class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               name="dp" [(ngModel)]="dateEnd" ngbDatepicker #end="ngbDatepicker">
+        <button class="input-group-addon" (click)="end.toggle()" type="button">
+          <img src="../assets/img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+        </button>
+      </div>
+    </div>
+  </form>
+  <br>
+  <button class="btn btn-primary" (click)='onSearch()'>Search</button>
+</div>
+
+<app-launch-info-box 
+  *ngFor="let launch of launches"
+  [imageURL] = "launch.rocket.imageURL"
+  [name] = "launch.name"
+  [net] = "launch.net"
+  [rocket_name] = "launch.rocket.name"
+  [familyname] = "launch.rocket.familyname"
+  [wiki_url] = "launch.rocket.wikiURL"
+  [gMapLat] = "launch.location.pads[0].latitude"
+  [gMapLng] = "launch.location.pads[0].longitude"
+  [pad_name] = "launch.location.pads[0].name"
+  [pad_wiki_url] = "launch.location.pads[0].wikiURL"
+  [location_name] = "launch.location.name"
+  [agency_name] = "launch.lsp.name"
+  [ageny_infoURL] = "launch.lsp.infoURL"
+  [agency_wikiURL] = "launch.lsp.wikiURL"
+  [mission_description] = "launch.missions[0] ? launch.missions[0].description : ''"
+></app-launch-info-box>
