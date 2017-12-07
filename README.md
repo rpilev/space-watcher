@@ -1,27 +1,72 @@
-# SpaceWatcher
+<p align="center">
+  <img width="160" src="https://www.themoviedb.org/assets/static_cache/dd25a8d6d44072f1be5a9daf03470526/images/v4/logos/293x302-powered-by-square-green.png">
+    <img width="250" src="https://material.angularjs.org/latest/img/icons/angular-logo.svg">
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
+# Space Watcher
+Front-end demo of a space launch search system.
 
-## Development server
+**Features include:**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Looking up the latest rocket lanches
+* Search for scheduled launches by date range
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+Requirements to install and test this application:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+    npm package-manager
 
-## Running unit tests
+### Installing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+In your terminal clone the repository using
 
-## Running end-to-end tests
+_HTTPS:_
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+    git clone https://github.com/rpilev/space-watcher.git
+or
 
-## Further help
+_SSH:_
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    git clone git@github.com:rpilev/space-watcher.git
+
+Install the dependencies
+
+    npm install
+
+For google maps to function you need to get an API key [here](https://developers.google.com/maps/documentation/javascript/get-api-key)
+
+under app.module.ts insert the API key:
+
+    AgmCoreModule.forRoot({
+      apiKey: '*YOUR API KEY HERE*'
+    }),
+
+Run the dev server
+
+    ng serve
+
+If no other development servers are currently running on the local machine then the application should now be available for testing at:
+
+[http://localhost:4200](http://localhost:4200)
+
+## Built With
+
+* [Angular 5](https://github.com/angular) (Bootstrapped with [Angular CLI](https://github.com/angular/angular-cli))
+  * [NG Bootstrap](https://github.com/ng-bootstrap/ng-bootstrap)
+* [Bootstrap](https://github.com/twbs/bootstrap)
+* [Launch Library API](https://launchlibrary.net/docs/1.3/api.html)
+
+## Authors
+* Raul Špilev
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/rpilev/school-system/blob/master/LICENSE) file for details
+
+## External links
+
+Deployed preview available at:
+[http://space-watcher.surge.sh/](http://space-watcher.surge.sh/)
