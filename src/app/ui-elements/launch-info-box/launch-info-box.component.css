@@ -1,13 +1,48 @@
+.launch-info-box{
+  color: #fff;
+  margin: 0 auto !important;
+  margin-bottom: 15px !important;
+}
+
 .launch-info-box-description {
   color: white;
+  padding: 25px;
 }
+
+.shorten-url {
+  max-width: 50px;
+  word-break: break-all;
+}
+
 .launch-info-box {
   margin: 10px;
   max-width: 1000px;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.07)
+  background: rgba(255, 255, 255, 0.04)
 }
-.launch-info-box-image img {
+
+.launch-info-box p {
+  margin-bottom: 0;
+}
+
+.launch-info-box-main {
+  padding: 25px;
+}
+
+.launch-info-box-main img {
   display: block;
   margin: 0 auto;
+}
+
+.row {
+  margin-bottom: 15px;
+}
+
+.mission-description {
+  padding: 25px;
+}
+
+agm-map {
+  height: 200px;
+  width: 200px;
 }

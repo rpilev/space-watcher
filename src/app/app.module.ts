@@ -11,6 +11,8 @@ import { LaunchListService } from './launch-list/launch-list.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LaunchInfoBoxComponent } from './ui-elements/launch-info-box/launch-info-box.component';
 
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,10 @@ import { LaunchInfoBoxComponent } from './ui-elements/launch-info-box/launch-inf
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAgzbCqtuayoECn4UZk27LDKv6BjAHFJVQ'
+    })
   ],
   providers: [LaunchListService],
   bootstrap: [AppComponent]

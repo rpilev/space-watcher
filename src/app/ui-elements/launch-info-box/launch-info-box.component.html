@@ -1,10 +1,56 @@
-<div class="container-fluid launch-info-box" [title]="net + ' - ' + name">
+<div class="container-fluid launch-info-box">
   <div class="row">
-    <div class="col-md-5 launch-info-box-image">
+    <div class="col-md-5 launch-info-box-main"> 
+      <div class="main-title">
+        <h4>{{ name }}</h4>
+        <i>{{ net }}</i>        
+      </div>
+
+      <hr>
       <img class="img-fluid" [src]="imageURL">
     </div>
     <div class="col-md-7 launch-info-box-description">
-      {{ name }}
+      <div class="row">
+        <div class="col-md-6 rocket-info">
+          <h5>Rocket</h5>
+          <p><b>Family-name:</b></p>
+          <p>{{ familyname }}</p>
+          <p><b>Name:</b></p>
+          <p>{{ rocket_name }}<p>
+          <p><b>Wikipedia:</b><p>
+          <a target="_blank" class="shorten-url" [href]="wiki_url">{{ wiki_url }}</a>
+        </div>
+        <div class="col-md-6">
+          <h5>Agency</h5>
+          <p><b>Name:</b></p>
+          <p>{{agency_name}}</p>
+          <p><b>Website:</b></p>
+          <a class="shorten-url" target="_blank" [href]="ageny_infoURL">{{ageny_infoURL}}</a>
+          <p><b>Wikipedia:</b></p>
+          <a class="shorten-url" target="_blank" [href]="agency_wikiURL">{{agency_wikiURL}}</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Map</h5>
+          <agm-map [latitude]="gMapLat" [longitude]="gMapLng">
+            <agm-marker [latitude]="gMapLat" [longitude]="gMapLng"></agm-marker>
+          </agm-map>
+        </div>
+        <div class="pad-info" class="col-md-6">
+          <h5>Location</h5>
+          <p><b>Address:</b></p>
+          <p>{{ location_name }}</p>
+          <p><b>Pad name:</b></p>
+          <p>{{ pad_name }}</p>
+          <p><b>Pad wiki:</b></p>
+          <a target="_blank" class="shorten-url" [href]="pad_wiki_url">{{ pad_wiki_url }}</a>
+        </div>
+      </div>
     </div>  
+  </div>
+  <div class="row mission-description">
+    <h4>Mission</h4>
+    <p>{{mission_description}}</p>
   </div>
 </div>
